@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Criminal Details{% endblock %}
+{% block content %}
+<div class="container" style="margin-top: 10px;">
+  <div style="padding-bottom: ;text-align:center">
+    <h1 class="text-center" style="color:red">DETECTED</h1>
+    <p style="font-size: 18px;color: black;">The classifier predicts the person that matches the given face with criminals faces in a Database. Thus the accuracy might get compromised.*</p>
+  </div>
+
+  <!-- <ul>
+    <li>{{record.first_name}} {{record.last_name}}</li>
+    <li>{{record.occupation}}</li>
+    <li>{{record.residence}}, {{record.country}}</li>
+  </ul> -->
+  <div class="container" style="margin-bottom: 2cm;">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1" style="padding-top:3em;padding-bottom:3em;-webkit-box-shadow: 0px 0px 14px 0px rgba(50, 50, 50, 0.5);
+-moz-box-shadow:    0px 0px 14px 0px rgba(50, 50, 50, 0.5);
+box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.5);">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <img src="{% static 'MyApp/criminalsImages/myimage.png' %}" class="img-responsive" style="border-radius:50%"/>
+            </div>
+
+            <!---
+            <div class="col-md-12" style="text-align:center">
+              <h3 style="color:#d18f02"><b>{{record.first_name}} {{record.last_name}}</b></h3>
+              <h5><b>Education: </b> {{record.education}} </h5>
+              <h5><b>Occupation: </b> {{record.occupation}} </h5>
+              <h5><b>Recidence: </b> {{record.residence}}, {{record.country}}</h5>
+              <h5><b>Marital status: </b> {{record.marital_status}}
+              <h5><b>Date Recorded in System: </b> {{record.recorded_at}}</h5>
+            </div>--->
+          </div>
+        </div>
+        <div class="col-md-7">
+          <h3>Records</h3>
+          <p>
+            <a href="{% url 'criminals_records' %}">
+            <button class="btn-primary" style="border-radius: 10px;border-bottom-right-radius: 0px;padding: 10px;">View Criminal Records</button></a></p>
+          </p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

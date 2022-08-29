@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+
+       <!--HII NI KWA AJILI YA ICONS ZOTE--->
+ <link href="{% static 'MyApp/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+
+    
+         <!---jqeury css link---->
+     <link rel="stylesheet" href="{% static 'MyApp/jqueryui/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'MyApp/jqueryui/jquery-ui.structure.min.css' %}">
+    <link rel="stylesheet" href="{% static 'MyApp/jqueryui/jquery-ui.structure.css' %}">
+    <link rel="stylesheet" href="{% static 'MyApp/jqueryui/jquery-ui.theme.min.css' %}">
+     <link rel="stylesheet" href="{% static 'MyApp/jqueryui/jquery-ui.theme.css' %}">
+
+ <!-- Vendor CSS Files ----->
+    <link href="{% static 'MyApp/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'MyApp/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'MyApp/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  
+    <link href="{% static 'MyApp/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+
+
+ <link href="{% static 'MyApp/assets/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    {% block content %}
+    {% endblock %}
+    
+    <!-- Custom scripts for this template -->
+    
+
+
+    <!--jquery code for autocomplete javascriptcode---->
+<script src="{% static 'MyApp/jqueryui/external/jquery/jquery.js' %}" type="text/javascript"></script>
+<script src="{% static 'MyApp/jqueryui/jquery-ui.js' %}" type="text/javascript"></script>
+
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="{% static 'MyAppjs/owl.carousel.min.js' %}"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="{% static 'MyAppjs/aos.js' %}"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="{% static 'MyAppjs/main.js' %}"></script>
+
+    <link href="{% static 'MyApp/js/bootstrap.js' %}" rel="stylesheet">
+
+    <!-- Vendor JS Files -->
+  <script src="{% static 'MyApp/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <script src="{% static 'MyApp/asstes/script.js' %}"></script>
+    <script src="{% static 'MyApp/asstes/js/particles.min.js' %}" ></script>
+
+    <!--link kwa ajiliya kukreate modal--->
+
+
+    <!-- --------- Owl-Carousel js ------------------->
+     <!-- Vendor JS Files -->
+  <script src="{% static 'MyApp/js/bootstrap.bundle.min.js' %}"></script>
+
+
+
+  </body>
+
+</html>

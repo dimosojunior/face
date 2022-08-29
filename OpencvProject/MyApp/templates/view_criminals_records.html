@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Image Recognition{% endblock %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <style type="text/css">
+    .card{
+      width: 100%;
+      transition-property: all;
+      transition-duration: 1s;
+      transition-delay: .5s;
+      transition-timing-function: ease-in;
+    }
+    .card:hover{
+      width: 90%;
+      margin-left: 25px;
+
+    }
+    h2{
+      font-family: 'poppins', sans-serif;
+      font-size: 18px;
+      color: black;
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="container-fluid" style="margin-top: 5px;">
+
+
+
+
+
+<div class="row" style="margin-bottom: 1cm;">
+
+{% if records %}
+
+  <div class="col-md-4" style="margin-top: 15px;"><!---mwanzo wa column--->
+
+
+
+<!---mwanzo wa card--->
+<div class="card text-center" style="border: 2px solid black;border-radius: 15px;">
+  <div class="card-header" style="background-color: rgb(5,5,49);color: white;padding: 10px;font-size: 20px;border-radius: 10px;">
+    {{records.criminals.name}}
+  </div>
+  <div class="card-body">
+{% if records.criminals.image %}
+    <center>
+      <img src="{{records.criminals.image.url}}"  class="rounded-circle" style="width: 80%;height: 6cm;">
+    </center>
+
+{% else %}
+
+  <center><h1 style="color: black;font-size: 22px;font-weight: bold;">NO IMAGE</h1></center>
+  {% endif %}
+
+  {% if user.is_superuser %}
+
+      <div style="margin-top: 1cm;">
+    <a href="{% url 'update_criminal_records' records.id %}" class="btn btn-primary" style="margin-right: 10px; margin-bottom: 15px;font-size: 18px;width: 30%;padding: 10px; border-radius: 10px;border-bottom-right-radius: 0px;">Update</a>
+
+    <a href="{% url 'delete_criminal_records' records.id %}" class="btn btn-danger" style="margin-bottom: 15px;font-size: 18px;width: 30%;padding: 10px; border-radius: 10px;border-bottom-right-radius: 0px;">Delete</a>
+    </div>
+
+  {% endif %}
+
+
+
+
+
+  </div>
+  
+</div>
+
+
+<!---mwisho wa card---->
+    
+  </div><!--mwisho wa column --->
+
+
+
+
+<div class="col-md-8" style="margin-bottom: 1cm;"><!--mwanzo wa column --->
+
+
+  <p>
+    <h2><span style="color: blue;font-weight: bold;">Full Name</span>: {{records.criminals.name}}</h2>
+    <h2><span style="color: blue;font-weight: bold;">Residence</span>: {{records.criminals.residence}}</h2>
+    <h2><span style="color: blue;font-weight: bold;">Country</span>: {{records.criminals.country}}</h2>
+    {% if records.criminals.education %}
+    <h2><span style="color: blue;font-weight: bold;">Education</span>: {{records.criminals.education}}</h2>
+    {% endif %}
+
+    {% if records.criminals.occupation %}
+    <h2><span style="color: blue;font-weight: bold;">Occupation</span>: {{records.criminals.occupation}}</h2>
+    {% endif %}
+    <h2><span style="color: blue;font-weight: bold;">Marital Status</span>: {{records.criminals.marital_status}}</h2>
+    <h2><span style="color: blue;font-weight: bold;">Gender</span>: {{records.criminals.gender}}</h2>
+    <h2><span style="color: blue;font-weight: bold;">First Time Recorded</span>: {{records.criminals.recorded_at}}</h2>
+    <h2><span style="color: blue;font-weight: bold;">Last Recorded</span>: {{records.criminals.recorded_at}}</h2>
+  </p>
+  
+
+</div><!--mwisho wa column --->
+
+
+
+
+
+
+
+
+
+
+  {% else %}
+
+  <center><h2 style="color: black;">No Any Records</h2></center>
+
+  {% endif %}
+
+
+
+
+<div class="row" style="margin-bottom: 2cm;margin-left: 15px;margin-top: 1cm;">
+
+  <center><h1 style="font-size: 22px;color: red;font-weight: bold;">CRime Records</h1></center>
+
+  <p style="font-size: 18px;color: black; font-family:'poppins', sans-serif;">
+    {{records.case_records}}
+  </p>
+  
+</div>
+
+
+
+
+
+
+
+</div><!---mwisho wa row---->
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+</body>
+</html>
+
+
+{% endblock %}
